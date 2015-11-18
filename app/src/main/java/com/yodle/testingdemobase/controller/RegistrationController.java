@@ -17,7 +17,6 @@ public class RegistrationController {
 
     public void registerNewStudent(Student student) {
         if(student != null && student.isValid()) {
-            datastore.persistStudent(student);
             registrationActivityNavigator.closeAndLogin(student);
         }
     }

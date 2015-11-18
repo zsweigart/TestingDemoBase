@@ -23,7 +23,7 @@ public class LoginController {
         Set<Student> studentSet = datastore.getStudents();
         for(Student student : studentSet) {
             if(student.getEmail().equals(email) && student.getPassword().equals(password)) {
-                loginActivityNavigator.openGpaCalculatorActivity(student);
+                loginActivityNavigator.openRegistrationActivity();
                 return;
             }
         }

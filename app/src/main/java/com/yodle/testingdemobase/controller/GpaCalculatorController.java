@@ -20,7 +20,7 @@ public class GpaCalculatorController {
         for(Course course : courseList) {
             if(course.getNumCredits() != 0) {
                 gpa += course.getGrade().getGpaPoints() * course.getNumCredits();
-                numCourseHours += course.getNumCredits();
+                numCourseHours ++;
             }
         }
 
@@ -30,11 +30,11 @@ public class GpaCalculatorController {
     }
 
     public void determineGpaMessage(double gpa) {
-        if(gpa >= 3.67) {
+        if(gpa >= 3.5) {
             gpaCalculatorView.showAmazingGpaToast();
-        } else if(gpa >= 3.33) {
+        } else if(gpa > 3.33) {
             gpaCalculatorView.showGreatGpaToast();
-        } else if(gpa >= 3.00) {
+        } else if(gpa <= 3.00) {
             gpaCalculatorView.showKeepItUpGpaToast();
         } else {
             gpaCalculatorView.showStudyHarderGpaToast();

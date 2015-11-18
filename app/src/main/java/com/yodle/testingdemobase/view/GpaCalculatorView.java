@@ -59,7 +59,7 @@ public class GpaCalculatorView extends LinearLayout {
     }
 
     public void showGreatGpaToast() {
-        Toast.makeText(context, context.getString(R.string.gpa_great_job), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, context.getString(R.string.gpa_thats_amazing), Toast.LENGTH_SHORT).show();
     }
 
     public void showKeepItUpGpaToast() {
