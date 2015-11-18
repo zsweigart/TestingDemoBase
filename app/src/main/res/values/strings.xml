@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Testing Demo Complete</string>
+    
+    <!-- Login -->
+    <string name="login_prompt_email">Email</string>
+    <string name="login_prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_register_short">Register</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_invalid_username_or_password">Sorry we couldn\'t find that username and password combination. Please check your credentials and try again.</string>
+
+    <!-- Registration -->
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="register_header">Register for a new account</string>
+    <string name="register_prompt_email">@string/login_prompt_email</string>
+    <string name="register_prompt_password">@string/login_prompt_password</string>
+    <string name="register_prompt_first_name">First name</string>
+    <string name="register_prompt_last_name">Last name</string>
+    <string name="register_prompt_age">Age</string>
+    <string name="register_age_format_error">Sorry, age must be a number</string>
+    <string-array name="year">
+        <item>Freshman</item>
+        <item>Sophomore</item>
+        <item>Junior</item>
+        <item>Senior</item>
+    </string-array>
+
+    <!-- GPA -->
+    <string name="title_activity_gpa">GpaActivity</string>
+    <string name="gpa_definition">
+        A 4 grade points\n
+        A- 3.67 grade points\n
+        B+ 3.33 grade points\n
+        B 3 grade points\n
+        B- 2.67 grade points\n
+        C+ 2.33 grade points\n
+        C 2 grade points\n
+        C- 1.67 grade points\n
+        D+ 1.33 grade points\n
+        D 1 grade point\n
+        D- 0.67 grade points\n
+        F 0 grade points
+    </string>
+    <string-array name="grades">
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>C-</item>
+        <item>D+</item>
+        <item>D</item>
+        <item>D-</item>
+        <item>F</item>
+    </string-array>
+    <string name="gpa_header">Calculate your GPA</string>
+    <string name="gpa_value_prefix">Your GPA is:</string>
+    <string name="gpa_value_string">Your GPA is: %.3f</string>
+    <string name="gpa_calculate">Calculate</string>
+    <string name="gpa_course_name">Course name</string>
+    <string name="gpa_hours">Hours</string>
+    <string name="gpa_grade">Grade</string>
+    <string name="gpa_add_more_courses">+ Add another course</string>
+    <string name="gpa_thats_amazing">That\'s amazing!</string>
+    <string name="gpa_great_job">Great Job!</string>
+    <string name="gpa_keep_it_up">Keep it up!</string>
+    <string name="gpa_study_harder">Try to study harder</string>
+
+    <!-- Dialog -->
+    <string name="oops_something_went_wrong">Oops, somthing went wrong</string>
+    <string name="option_ok">OK</string>
+</resources>

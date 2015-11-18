@@ -1,0 +1,72 @@
+package com.yodle.testingdemobase.activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.VisibleForTesting;
+import android.support.v7.app.AppCompatActivity;
+
+import com.yodle.testingdemobase.MainApp;
+import com.yodle.testingdemobase.controller.LoginController;
+import com.yodle.testingdemobase.model.Student;
+import com.yodle.testingdemobase.persistence.Datastore;
+import com.yodle.testingdemobase.view.LoginView;
+
+public class LoginActivity extends AppCompatActivity implements LoginController.LoginActivityNavigator {
+    public static final String NEW_REGISTERED_STUDENT = "NEW_REGISTERED_STUDENT";
+
+    @VisibleForTesting
+    static final int REGISTER_STUDENT = 1;
+
+    private LoginView loginView;
+    private LoginController loginController;
+    private MainApp mainApp;
+    private Datastore datastore;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        loginView = new LoginView(this, this);
+        setContentView(loginView);
+
+        mainApp = (MainApp) getApplication();
+        datastore = mainApp.getSharedPrefsDatastore();
+        loginController = new LoginController(loginView, this);
+        loginView.setLoginController(loginController);
+    }
+
+    @Override
+    public void openRegistrationActivity() {
+        startActivityForResult(RegistrationActivity.getBlankRegistrationIntent(this), REGISTER_STUDENT);
+    }
+
+    @Override
+    public void openRegistrationActivity(String email) {
+        startActivityForResult(RegistrationActivity.getRegistrationIntentWithEmail(this, email), REGISTER_STUDENT);
+    }
+
+    @Override
+    public void openGpaCalculatorActivity(Student student) {
+        startActivity(GpaCalculatorActivity.getGpaIntentWithStudent(this, student));
+        finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_OK) {
+            if(requestCode == REGISTER_STUDENT) {
+                Student student = (Student) data.getSerializableExtra(NEW_REGISTERED_STUDENT);
+                loginController.attemptSignIn(student.getEmail(), student.getPassword());
+            }
+        }
+    }
+
+    @Override
+    public Datastore getDatastore() {
+        return datastore;
+    }
+
+    void setLoginController(LoginController loginController) {
+        this.loginController = loginController;
+    }
+}
